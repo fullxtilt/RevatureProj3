@@ -1,0 +1,24 @@
+.flex {
+    display: flex;
+    justify-content: space-around;
+    flex-direction: row;
+    margin: 5px;
+}
+
+.box-1 {
+    flex: 1;
+}
+
+.box-2 {
+    flex: 2;
+}
+
+.mobile {
+    max-width: max-content;
+}
+
+@media only screen and (max-width: 750px) {
+    .flex {
+        flex-direction: column;
+    }
+}
