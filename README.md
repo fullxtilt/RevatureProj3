@@ -1,5 +1,6 @@
 # Connector Marketplace (3.3)
-The Connector Marketplace is an Angular web application constructed to assist Equifax clients in finding api connectors that will help them with their business needs. Users can log in to write reviews. Users are able to view a list of available APIs, as well as their features and use cases. Users can navigate a faux purchase flow to acquire access to the products. They will also be able to view reviews that other customers have made. This will lead to increased customer satisfaction and greater utilization of Equifax’s digital, intellectual property.
+The Connector Marketplace is an Angular web application constructed to assist Equifax clients in finding api connectors that will help them with their business needs. Users can log in to write reviews. Users are able to view a list of available APIs, as well as their features and use cases. Users can navigate a faux purchase flow to acquire access to the products. They will also be able to view reviews that other customers have made. This will lead to increased customer satisfaction and greater utilization of Equifax’s digital, intellectual property.  
+This project is still a work in progress and is scheduled to be completed by November 18th.
 
 # Technologies Used 
 * Angular 2+
@@ -20,3 +21,4 @@ The Connector Marketplace is an Angular web application constructed to assist Eq
 ```
 git clone https://github.com/fullxtilt/RevatureProj3.git
 ```
+
