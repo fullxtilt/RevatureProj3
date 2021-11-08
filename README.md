@@ -20,5 +20,17 @@ This project is still a work in progress and is scheduled to be completed by Nov
 # Getting Started
 ```
 git clone https://github.com/fullxtilt/RevatureProj3.git
-```
+``` 
+Test Account
+* username: test@gmail.com
+* password: P4ss
 
+# Usage
+User must log in to a test account and then they will have access to the application's full functionality. Click on different APIs to see more detailed information and 'purchase' access.
+
+# Contributors
+* Ryan Moss
+* William Scully
+* John Benson
+* Eduardo Gonzalez
+* Kiennen Mason
