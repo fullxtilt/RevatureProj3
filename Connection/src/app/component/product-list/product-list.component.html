@@ -1,9 +1,43 @@
-<p>product-list works!</p>
+<div
+  class="flex-container"
+  fxLayout="row wrap"
+  fxLayout.xs="column"
+  fxLayoutGap="25px grid"
+>
+  <div class="custom-field">
+    <!-- searchText is a string property in productlist ts-->
+    <input
+      id="name"
+      type="search"
+      class="search-field"
+      [(ngModel)]="searchText"
+      placeholder="Search Products"
+    />
+    <button type="submit" class="search-button">
+      <img src="assets/search.png" />
+    </button>
+  </div>
+  <!-- added "searchpipe" to search  by  the "productName" property of products-->
+  <div
+    class="child"
+    fxFlex="30%"
+    *ngFor="let product of productsSorted | searchpipe: searchText:'productName'; index as pIndex"
+  >
+    <a [routerLink]="['product-detail/', product.productId]" style="text-decoration: none;">
+      <div class="card" (mouseenter)="hoverOn($event)" (mouseleave)="hoverOff($event)">
+        <mat-card>
+          <mat-card-title>{{ product.productName }}</mat-card-title>
+          <mat-card-subtitle>{{ product.productDescription }}</mat-card-subtitle>
+          <br />
+          <img src="{{ product.logoUrl }}" />
+          <br/>
+          <mat-icon *ngFor="let starIndex of starIndexArray" class="stars">{{
+            getStarValue(starIndex, product.stars)
+          }}</mat-icon>
 
-<div class="flex-container" fxLayout="row wrap" fxLayout.xs="column" fxLayoutGap="25px grid">
-    <div class="child" fxFlex= "30%" *ngFor="let product of products">
-        <div class= "card">{{product.name}}</div>
-    </div>
-    
+
+        </mat-card>
+      </div>
+    </a>
+  </div>
 </div>
-

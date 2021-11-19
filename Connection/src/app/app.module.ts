@@ -41,6 +41,9 @@ import {MatTreeModule} from '@angular/material/tree';
 //Flex Layout
 import { FlexLayoutModule } from '@angular/flex-layout';
 
+//youtube
+import { YouTubePlayerModule } from "@angular/youtube-player";
+
 //custom components
 import { NavBarComponent } from './component/nav-bar/nav-bar.component';
 import { FeatureComponent } from './component/feature/feature.component';
@@ -54,14 +57,19 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AppRoutingModule } from './app-routing.module';
 
 import { ProductListComponent } from './component/product-list/product-list.component';
-import { ReviewDetailComponent } from './component/review-detail/review-detail.component';
+import { OverlayModule } from '@angular/cdk/overlay';
 import { LoginComponent } from './component/login/login.component';
 import { ReviewFeedComponent } from './component/review/review-feed/review-feed.component';
 import { ProductDetailComponent } from './component/product-detail/product-detail.component';
 import { ReviewComponent } from './component/review/review/review.component';
+import { DatePipe } from '@angular/common';
+import { SearchpipePipe } from './searchpipe.pipe';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
+    SearchpipePipe,
     AppComponent,
     NavBarComponent,
     FeatureComponent,
@@ -70,10 +78,9 @@ import { ReviewComponent } from './component/review/review/review.component';
     UseCaseComponent,
     BenefitComponent,
     ProductListComponent,
-    ReviewDetailComponent,
     LoginComponent,
     ReviewFeedComponent,
-    ProductDetailComponent
+    ProductDetailComponent,    
   ],
   imports: [
     BrowserModule,    
@@ -113,12 +120,16 @@ import { ReviewComponent } from './component/review/review/review.component';
     MatToolbarModule,
     MatTooltipModule,
     MatTreeModule,
+    MatFormFieldModule,
     FormsModule,
     ReactiveFormsModule,
     AppRoutingModule,
     FlexLayoutModule,
+    OverlayModule,
+    YouTubePlayerModule,
+    HttpClientModule
   ],
-  providers: [],
+  providers: [DatePipe],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

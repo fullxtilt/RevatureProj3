@@ -1,9 +1,23 @@
+<h2>Reviews</h2>
+
+<!-- Create review form -->
+<form [formGroup]="reviewForm" (ngSubmit)="onReviewSubmit()">
+
+    <!-- Stars -->
+    <div id="starContainer">
+        <mat-icon *ngFor="let starIndex of starArray" (mousemove)="onStarMouseMove(starIndex, $event)"
+            (mouseout)="onStarMouseOut()" (click)="onStarClick(starIndex, $event)" class="stars">star_outline</mat-icon>
+    </div>
+
+    <!-- Text field -->
+    <mat-form-field appearance="fill" aria-placeholder="test?">
+        <mat-label>Leave your own review...</mat-label>
+        <textarea matInput formControlName="reviewText"></textarea>
+    </mat-form-field>
+
+    <!-- Submit button -->
+    <button mat-button [disabled]="!reviewForm.valid">{{!hasAlreadyReviewed ? 'Submit Review' : 'Update Review'}}</button>
+</form>
+
+<!-- Reviews -->
 <app-review *ngFor="let review of reviews" [review]="review"></app-review>
-<!-- <mat-card *ngFor="let review of reviews">
-    <mat-card-subtitle>{{review.author.firstName}}</mat-card-subtitle>
-    <mat-card-subtitle>{{review.submitted}}</mat-card-subtitle>
-    <mat-card-content>
-        <p>stars: {{review.stars}}</p>
-        <p>{{review.text}}</p>
-    </mat-card-content>
-</mat-card> -->

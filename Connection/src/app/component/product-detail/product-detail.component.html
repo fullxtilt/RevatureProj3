@@ -1,11 +1,22 @@
+
+<div *ngIf="product">
+    <h1>{{product.productName}}</h1>
+
 <div class="flex">
-    <div class="box-2 mobile">
-        <app-benefit></app-benefit>
+    <div class="box-2">
+
+        <youtube-player class="flex center" videoId="{{videoId}}" suggestedQuality="highres">
+        </youtube-player>
+
+        <app-benefit [product] = "product"></app-benefit>
+        
+        <app-review-feed [parentProductId]="convertIdString()"></app-review-feed>
+
     </div>
-    <div class="box-1 mobile">
+    <div class="box-1">
         <app-use-case></app-use-case>
-    </div>
-    <div class="box-1 mobile">
         <app-feature></app-feature>
     </div>
+</div>
+
 </div>
